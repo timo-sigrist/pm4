@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=compass'
+      - 'POSTGRES_PASSWORD=tr3&osCz%DCbE-j6o46M'
+      - 'POSTGRES_USER=dbadmin'
+    ports:
+       - '7676:5432'

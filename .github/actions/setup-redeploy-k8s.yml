@@ -1,0 +1,25 @@
+name: "Set Up K8s and Redeploy"
+description: "Sets up Kubernetes context and triggers redeployment with dynamic image tags and namespaces"
+inputs:
+  kubeconfig_data:
+    description: "Kubeconfig Data"
+    required: true
+  image_tag:
+    description: "Docker image tag to use for redeployment"
+    required: true
+  namespace:
+    description: "Kubernetes namespace for deployment"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up K8s context
+      uses: azure/k8s-set-context@v1
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ inputs.kubeconfig_data }}
+
+    - run: |
+        kubectl set image deployment/compass-deployment my-container=${{ inputs.image_tag }} -n ${{ inputs.namespace }}
+        kubectl patch deployment compass-deployment -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"forceReDeploy\":\"$(date +%s)\"}}}}}" -n ${{ inputs.namespace }}

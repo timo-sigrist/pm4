@@ -1,0 +1,135 @@
+name: Front and Backend Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch: # enables manual trigger
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  frontend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run Frontend Tests and Upload Coverage
+        uses: ./.github/actions/run-frontend-tests
+        with:
+          working-directory: "./frontend"
+          codecov-token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload Frontend Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-test-results
+          path: ./frontend/build/reports
+
+  backend-tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_HOST: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: compass
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: "21"
+          distribution: "temurin"
+      - name: Run Backend Tests and Upload Coverage
+        uses: ./.github/actions/run-backend-tests
+        with:
+          working-directory: "./backend"
+          codecov-token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload Backend Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: backend-test-results
+          path: ./backend/build
+
+  sonarqube-analysis:
+    needs: [backend-tests, frontend-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK for SonarQube
+        uses: actions/setup-java@v3
+        with:
+          java-version: 21
+          distribution: "temurin"
+
+      - name: Download Frontend Test Results
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend-test-results
+          path: ./frontend/coverage
+
+      - name: Download Backend Test Results
+        uses: actions/download-artifact@v3
+        with:
+          name: backend-test-results
+          path: ./backend/build
+
+      - name: Install SonarQube Scanner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jre
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+          echo "$(pwd)/sonar-scanner-4.6.2.2472-linux/bin" >> $GITHUB_PATH
+
+      - name: SonarQube Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=ZHAW-PM4-Compass_compass_AY9s1cSxfbchvYxrftSR \
+            -Dsonar.sources=./backend \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+      - name: Fetch SonarQube Analysis Results
+        id: fetch_sonar_results
+        run: |
+          project_key="ZHAW-PM4-Compass_compass_AY9s1cSxfbchvYxrftSR"
+          sonar_host="${{ secrets.SONAR_HOST_URL }}"
+          sonar_token="${{ secrets.SONAR_TOKEN }}"
+          analysis_result=$(curl -u $sonar_token: "$sonar_host/api/qualitygates/project_status?projectKey=$project_key")
+          echo "$analysis_result" > analysis_result.json
+          quality_gate_status=$(echo "$analysis_result" | jq -r '.projectStatus.status')
+          echo "Quality Gate Status: $quality_gate_status"
+          echo "quality_gate_status=$quality_gate_status" >> $GITHUB_ENV
+          echo "analysis_result=$(cat analysis_result.json)" >> $GITHUB_ENV
+
+      - name: Post Comment on PR
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            SonarQube Quality Gate Status: ${{ env.quality_gate_status }}.
+
+            [SonarQube Dashboard](${{ secrets.SONAR_HOST_URL }}/dashboard?id=ZHAW-PM4-Compass_compass_AY9s1cSxfbchvYxrftSR)

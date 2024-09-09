@@ -1,0 +1,18 @@
+DOCKER_ON=true or false
+SWAGGER_UI_ON=true or false
+SECURITY_LOG_LEVEL=DEBUG
+
+APP_URL=localhost:8080
+
+DB_HOST= 						//relevant if running local db not docker compose
+DB_PASSWORD=					//relevant if running local db not docker compose
+DB_USERNAME=					//relevant if running local db not docker compose
+DDL_AUTO=update
+
+AUTH0_AUDIENCE=backend-api
+AUTH0_BASE_URL=http://localhost:3000/
+AUTH0_ISSUER_BASE_URL=https://stadtmuur-compass-dev.eu.auth0.com
+AUTH0_CLIENT_ID= 				//secret get from Team
+AUTH0_CLIENT_SECRET=			//secret get from Team
+AUTH0_SECRET=					//secret get from Team
+AUTH0_MGMT_AUDIENCE=https://stadtmuur-compass-dev.eu.auth0.com/api/v2/

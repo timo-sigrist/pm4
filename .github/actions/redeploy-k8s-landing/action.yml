@@ -1,0 +1,26 @@
+name: "Redeploy Landing"
+description: "Sets up Kubernetes context and triggers landing redeployment with dynamic image tags and namespaces"
+inputs:
+  kubeconfig_data:
+    description: "Kubeconfig Data"
+    required: true
+  landing_image_tag:
+    description: "Docker image tag to use for landing redeployment"
+    required: true
+  namespace:
+    description: "Kubernetes namespace for landing deployment"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up K8s context
+      uses: azure/k8s-set-context@v1
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ inputs.kubeconfig_data }}
+
+    - run: |
+        kubectl set image deployment/compass-landing-deployment compass-landing-container=${{ inputs.landing_image_tag }} -n ${{ inputs.namespace }}
+        kubectl patch deployment compass-landing-deployment -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"forceReDeploy\":\"$(date +%s)\"}}}}}" -n ${{ inputs.namespace }}
+      shell: bash

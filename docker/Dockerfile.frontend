@@ -1,0 +1,23 @@
+# Frontend Build Stage
+FROM node:20 AS builder
+WORKDIR /app
+COPY ./frontend/package*.json ./
+RUN npm ci
+COPY ./frontend/ .
+RUN npm run build
+
+# Final Stage
+FROM node:20
+WORKDIR /app
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+
+# Copy the frontend part of the start script, if needed
+# COPY start_frontend.sh .
+# RUN chmod +x start_frontend.sh
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

@@ -1,0 +1,61 @@
+name: "Run Backend Tests with PostgreSQL in Docker"
+description: "Builds a Docker image and runs Gradle tests within the container, then uploads test coverage in a Java project"
+inputs:
+  working-directory:
+    description: "The working directory where your backend project is located"
+    required: true
+    default: "./backend"
+  codecov-token:
+    description: "Codecov token for uploading coverage"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Build Docker Image
+      shell: bash
+      run: docker build -t backend-tests -f ./docker/test/Dockerfile.backend .
+
+    - name: Run Tests in Docker Container
+      shell: bash
+      run: |
+        docker run \
+          -e DOCKER_ON='false' \
+          -e PORT='8080' \
+          -e DB_HOST='//host.docker.internal:5432/compass' \
+          -e DB_USERNAME='postgres' \
+          -e DB_PASSWORD='test_password' \
+          -e DDL_AUTO='create' \
+          -e AUTH0_ISSUER_BASE_URL='https://test.local' \
+          -e AUTH0_AUDIENCE='test' \
+          -e AUTH0_CLIENT_ID='' \
+          -e AUTH0_CLIENT_SECRET='' \
+          -e AUTH0_MGMT_AUDIENCE='https://test.local' \
+          -e APP_URL='test.local' \
+          --add-host host.docker.internal:host-gateway \
+          -v $(pwd)/backend/build:/app/build \
+          --name test-container \
+          backend-tests \
+          /bin/sh -c "gradle test -info && printenv"
+
+    - name: Debug Copied Classes
+      shell: bash
+      run: ls -la ./backend/build
+
+    - name: Upload Backend Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: backend-test-results
+        path: ./backend/build
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ inputs.codecov-token }}
+        directory: ./backend/build/reports
+        flags: backend
+        fail_ci_if_error: true
+        verbose: true

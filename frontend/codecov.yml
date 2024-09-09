@@ -1,0 +1,19 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 0%
+        threshold: 5%
+ignore:
+  - "node_modules/**/*"
+  - "public/**/*"
+  - "migrations/**/*"
+  - ".next/**/*"
+  - "**/*.config.js"
+  - "**/*.config.ts"
+  - "**/*.config.mjs"
+  - "**/*.config.yml"
+  - "test-results/**/*"
+  - "tests/**/*"
+  - "src/openapi/**/*"
+  - "src/constants/**/*"

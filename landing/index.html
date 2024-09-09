@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Compass</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/compass-noto.svg" rel="icon">
+    <link href="assets/img/compass-noto.svg" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    *
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Updated: May 13 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="assets/img/compass-noto.svg" alt="">
+            <h1 class="sitename">Compass</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#hero" class="">Home</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Webapplikation</a></li>
+                <li><a href="">Dienstleistung</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#pricing">Angebot</a></li>
+                <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Dropdown 1</a></li>
+                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Dropdown 1</a></li>
+                                <li><a href="#">Deep Dropdown 2</a></li>
+                                <li><a href="#">Deep Dropdown 3</a></li>
+                                <li><a href="#">Deep Dropdown 4</a></li>
+                                <li><a href="#">Deep Dropdown 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 3</a></li>
+                        <li><a href="#">Dropdown 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="#about">Los gehts</a>
+
+    </div>
+</header>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                    <h1 class="">Mehr als nur eine Zeiterfassung</h1>
+                    <p class="">Entdecken Sie mit Compass, wie Sie nicht nur die Effizienz Ihres Unternehmens steigern,
+                        sondern auch das Arbeitsleben Ihrer Mitarbeiter bereichern können. </p>
+                    <div class="d-flex">
+                        <a href="#about" class="btn-get-started">Hier starten</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="assets/img/starbild.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+        <div class="container" data-aos="zoom-in">
+
+            <div class="swiper">
+                <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": {
+                            "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        },
+                        "breakpoints": {
+                            "320": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 40
+                            },
+                            "480": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 60
+                            },
+                            "640": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 80
+                            },
+                            "992": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 120
+                            },
+                            "1200": {
+                                "slidesPerView": 1,
+                                "spaceBetween": 120
+                            }
+                        }
+                    }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><img src="assets/img/clients/stadtmuur-logo.png" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 class="">Über uns</h2>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Compass bietet Ihnen folgende Vorteile:
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check2-circle"></i> <span>Effiziente Zeiterfassung Ihrer Mitarbeiter mit Kontrolle und verlässlicher Bestätigung</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Erfassung und Verwaltung verschiedener Mitarbeiterrollen</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Möglichkeit, personalisierte Tagesnotizen zum Arbeitstag zu ergänzen</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Erfassung und Analyse von Vorfällen auf die Arbeitsleistung</span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Erfassung der Selbsteinschätzung und Stimmung der Mitarbeiter</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>Nutzen sie mit Compass diese Vorteile und Wirken sie mit zu dem Wohlbefinden und der Leistung
+                        ihrer Mitarbeiter</p>
+                    <a href="#" class="read-more"><span>Mehr erfahren</span><i class="bi bi-arrow-right"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us" data-builder="section">
+
+        <div class="container-fluid">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+                    <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class=""><span class=""></span><strong>Optimieren Sie Ihr Unternehmensmanagement mit
+                            Compass</strong></h3>
+                        <p class="">
+                            Compass – Ihre umfassende Lösung zur Zeiterfassung, Stimmungsüberwachung und Vorfallanalyse,
+                            die Effizienz steigert, Mitarbeiterzufriedenheit verbessert und fundierte Entscheidungen
+                            ermöglicht.
+                        </p>
+                    </div>
+
+                    <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="faq-item faq-active">
+
+                            <h3><span>01</span> Optimieren Sie Ihre Betriebsabläufe mit einer präzisen und
+                                benutzerfreundlichen Zeiterfassung.</h3>
+                            <div class="faq-content">
+                                <p>Die Zeiterfassungsfunktion ermöglicht es Unternehmen, Arbeitsstunden genau zu
+                                    erfassen und zu verwalten. Dies führt zu einer verbesserten Effizienz, korrekten
+                                    Gehaltsabrechnungen und einer besseren Planung der Ressourcen.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span>02</span> Verbessern Sie die Mitarbeiterzufriedenheit durch das kontinuierliche
+                                Monitoring der Mitarbeiterstimmung.</h3>
+                            <div class="faq-content">
+                                <p>Mit der Stimmungserfassungsfunktion können Unternehmen das Wohlbefinden ihrer
+                                    Mitarbeiter in Echtzeit überwachen und analysieren. Dadurch können rechtzeitig
+                                    Maßnahmen ergriffen werden, um die Arbeitsumgebung zu verbessern und die
+                                    Mitarbeiterzufriedenheit zu steigern.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3><span>03</span> Erhalten Sie wertvolle Einblicke in die Auswirkungen von Vorfällen auf
+                                die Arbeitsleistung durch umfassende Analysen.</h3>
+                            <div class="faq-content">
+                                <p>Die Funktion zur Erfassung und Analyse von Vorfällen ermöglicht es Unternehmen,
+                                    detaillierte Berichte über Zwischenfälle und deren Auswirkungen auf die
+                                    Produktivität zu erstellen. Dies hilft, Ursachen zu identifizieren und gezielte
+                                    Verbesserungsmaßnahmen umzusetzen.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+                    <img src="assets/img/compass%20grau.jpg" class="img-fluid" alt="" data-aos="zoom-in"
+                         data-aos-delay="100">
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Image Section -->
+            <div class="row mb-4">
+                <div class="col-lg-12 d-flex justify-content-center">
+
+                </div>
+            </div>
+            <!-- End Image Section -->
+
+
+            <div class="row">
+                <div class="col-lg-12 content text-center">
+                    <h3>Die Stimmung Ihrer Mitarbeiter beeinflusst direkt ihre Produktivität und die Qualität ihrer
+                        Arbeit – eine positive Arbeitsatmosphäre kann den Unterschied zwischen Erfolg und Misserfolg
+                        ausmachen.</h3>
+                    <p class="fst-italic">
+                        Mit Compass können Mitarbeiter ihre Stimmung mühelos und übersichtlich erfassen. Sie wählen
+                        einfach aus verschiedenen Kategorien und bewerten ihre Stimmung auf einer Skala von 1 bis 10. So
+                        wird es leicht, wertvolle Einblicke in das Arbeitsklima zu gewinnen und frühzeitig auf mögliche
+                        Herausforderungen zu reagieren.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; align-items: center; margin-top: 20px;">
+                <div style="width: 50%">
+                    <img src="assets/img/mood.jpg" class="img-fluid" alt="Mood Image">
+                </div>
+                <div style="width: 50%">
+                    <div class="skills-content skills-animation">
+                        <div class="progress">
+                            <span class="skill"><span>Kategorie</span> <i class="val">100%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+                        </div><!-- End Skills Item -->
+
+                        <div class="progress">
+                            <span class="skill"><span>Kategorie</span> <i class="val">90%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+                        </div><!-- End Skills Item -->
+
+                        <div class="progress">
+                            <span class="skill"><span>Kategorie</span> <i class="val">75%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+                        </div><!-- End Skills Item -->
+
+                        <div class="progress">
+                            <span class="skill"><span>Kategorie</span> <i class="val">55%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+                        </div><!-- End Skills Item -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- Text and Progress Bars Section -->
+
+            <!-- End Text and Progress Bars Section -->
+
+        </div>
+    </section><!-- /Skills Section -->
+
+
+    <!-- Time Tracking Promotion Section -->
+    <section id="time-tracking-promo" class="section bg-light text-center py-5">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title">
+                <h2>Zeiterfassung</h2>
+                <p>Effiziente Zeiterfassung für bessere Produktivität und Ressourcenplanung.</p>
+            </div>
+            <div class="row align-items-center">
+
+                <div style="display: flex; flex-direction: row; align-items: center; margin-top: 20px;">
+                    <div style="width: 100%">
+                        <img src="assets/img/screenshots/zeiterfassung.png" class="img-fluid" alt="Mood Image">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row gy-4 mt-4">
+                <div class="col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box iconbox-blue">
+                        <div class="icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <h4><a href="#">Genauigkeit</a></h4>
+                        <p>Arbeitsstunden präzise erfassen und verwalten.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box iconbox-orange">
+                        <div class="icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h4><a href="#">Planung</a></h4>
+                        <p>Bessere Ressourcenplanung durch genaue Daten.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="icon-box iconbox-pink">
+                        <div class="icon">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <h4><a href="#">Kontrolle und Bestätigung</a></h4>
+                        <p>Kontrollieren und Bestätigen Sie einfach die Stunden ihrer Mitarbeiter.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="icon-box iconbox-yellow">
+                        <div class="icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4><a href="#">Produktivität</a></h4>
+                        <p>Effizienz durch detaillierte Zeiterfassung steigern.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </div>
+
+    </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Confirmation and Control Section -->
+    <section id="confirmation-control" class="section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title">
+                <h2>Bestätigung und Kontrolle</h2>
+                <p>Zuverlässige Bestätigung und Kontrolle der Arbeitszeiten.</p>
+            </div>
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="width: 100%">
+                    <img src="assets/img/screenshots/Kontrolle Arbeitszeit.png" class="img-fluid" alt="Mood Image">
+                </div>
+            </div>
+            <div class="row gy-4 ">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <div class="content" ; style="margin-top: 40px; ">
+                        <h3>Verlässliche Arbeitszeiterfassung</h3>
+                        <p>Unsere Lösung bietet eine verlässliche Bestätigung und Kontrolle der Arbeitszeiten durch
+                            Vorgesetzte, um die Genauigkeit der Zeiterfassung zu gewährleisten und potenzielle Fehler zu
+                            minimieren.</p>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Arbeitsstunden überprüfen</li>
+                            <li><i class="bi bi-check-circle"></i> Fehler minimieren</li>
+                            <li><i class="bi bi-check-circle"></i> Effizienz steigern</li>
+                            <li><i class="bi bi-check-circle"></i> Notizen erfassen</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="assets/img/screenshots/notizen%20erfassen.png" class="img-fluid" alt=""
+                         style="margin-top: 40px; flex-direction: row; display: flex">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Confirmation and Control Section -->
+
+    <!-- User Management Section -->
+    <section id="user-management" class="section bg-light">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title">
+                <h2>User Management</h2>
+                <p>Effektives User Management für unterschiedliche Rollen und Rechte.</p>
+            </div>
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="width: 100%">
+                    <img src="assets/img/screenshots/benutzerverwaltung.png" class="img-fluid" alt="Mood Image">
+                </div>
+            </div>
+            <div class="row gy-4" style="margin-top: 20px">
+                <div class="col-lg-6">
+                    <div class="icon-box iconbox-green">
+                        <div class="icon">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h4><a href="#">Rollen verwalten</a></h4>
+                        <p>Verschiedene Mitarbeiterrollen effektiv managen.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon-box iconbox-red">
+                        <div class="icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4><a href="#">Rechte zuweisen</a></h4>
+                        <p>Klare Verantwortungsverteilung durch Rollenzuweisung.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon-box iconbox-purple">
+                        <div class="icon">
+                            <i class="bi bi-key"></i>
+                        </div>
+                        <h4><a href="#">Zugriffskontrolle</a></h4>
+                        <p>Sicherer und gezielter Zugang zu Informationen.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon-box iconbox-blue">
+                        <div class="icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4><a href="#">Datensicherheit</a></h4>
+                        <p>Schützen Sie sensible Mitarbeiterdaten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /User Management Section -->
+
+    <!-- Visualization Section -->
+    <section id="visualization" class="section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title">
+                <h2>Visualisierung</h2>
+                <p>Daten visualisieren und fundierte Entscheidungen treffen.</p>
+            </div>
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="width: 100%">
+                    <img src="assets/img/screenshots/monatsübersicht.png" class="img-fluid" alt="Mood Image">
+                </div>
+            </div>
+            <div class="row gy-4" style="margin-top: 20px">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <div class="content">
+                        <h3>Interaktive Dashboards</h3>
+                        <p>Unsere Visualisierungs-Tools ermöglichen es Ihnen, Daten auf intuitive und interaktive Weise
+                            darzustellen. Dies hilft bei der schnellen Erkennung von Mustern und Trends, um fundierte
+                            Geschäftsentscheidungen zu treffen.</p>
+                        <ul>
+                            <li><i class="bi bi-bar-chart"></i> Datenanalyse</li>
+                            <li><i class="bi bi-pie-chart"></i> Visuelle Reports</li>
+                            <li><i class="bi bi-line-chart"></i> Performance Tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Visualization Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Vorteile</h2>
+            <p>Diese Eigenschaften heben Compass von der Konkurrenz ab</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item position-relative">
+                        <div class="icon"><i class="bi bi-activity icon"></i></div>
+                        <h4><a href="service-details.html" class="stretched-link">Wohlbefinden</a></h4>
+                        <p>Untersuchen Sie das Wohlbefinden ihrer Mitarbeiter</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative">
+                        <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+                        <h4><a href="service-details.html" class="stretched-link">Arbeitsleistung</a></h4>
+                        <p>Profitieren Sie von einer Übersicht der Leistung ihrer Mitarbeiter</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item position-relative">
+                        <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
+                        <h4><a href="service-details.html" class="stretched-link">Übersichtliche Zeiterfassung</a></h4>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item position-relative">
+                        <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+                        <h4><a href="service-details.html" class="stretched-link">Kontrolle und Analyse</a></h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+        <img src="assets/img/compass-stock.jpg" alt="">
+
+        <div class="container">
+
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-9 text-center text-xl-start">
+                    <h3>Call To Action</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+                <div class="col-xl-3 cta-btn-container text-center">
+                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Team</h2>
+            <p>Diese Webapplikation wurde im Rahmen eines Gruppenprojekts der ZHAW umgesetzt.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/noah.jfif" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Noah Baumgartner</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/noe.jfif" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Noé Zimmermann</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/cyrill.jfif" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Cyrill Berger</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/till.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Till Cadow</h4>
+                            <span>Programmierer & Betreuung Kunden</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/dario.jfif" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Dario Brunner</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/timo.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Timo Sigrist</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/Karim.jfif" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Karim Elhayawan</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="assets/img/team/jason.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Jason Weber</h4>
+                            <span>Programmierer</span>
+                            <p>Student Informatik ZHAW</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""> <i class="bi bi-linkedin"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Angebot</h2>
+            <p>Profitieren Sie auch von unserer Webapplikation für ihr Unternehmen!</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="pricing-item">
+                        <h3>Standard</h3>
+                        <h4><sup>CHF</sup>99.-<span> / Monat</span></h4>
+                        <ul>
+                            <li><i class="bi bi-check"></i> <span>20 Mitarbeiter</span></li>
+                            <li><i class="bi bi-check"></i> <span>3 Vorgesetzen Rollen</span></li>
+                            <li><i class="bi bi-check"></i> <span>1 Admin</span></li>
+                            <li class="na"><i class="bi bi-x"></i> <span>Support</span></li>
+                            <li class="na"><i class="bi bi-x"></i> <span>Massgeschneiderte Lösungen</span></li>
+                        </ul>
+                        <a href="#" class="buy-btn">Jetzt Kaufen</a>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="pricing-item featured">
+                        <h3>Deluxe</h3>
+                        <h4><sup>CHF</sup>150-.<span> / Monat</span></h4>
+                        <ul>
+                            <li><i class="bi bi-check"></i> <span>Uneingschränkte Mitarbeiteranzahl</span></li>
+                            <li><i class="bi bi-check"></i> <span>Uneingeschränkte Vorgesetztenrollen</span></li>
+                            <li><i class="bi bi-check"></i> <span>Uneingschränkte Adminrollen</span></li>
+                            <li><i class="bi bi-check"></i> <span>Support</span></li>
+                            <li><i class="bi bi-check"></i> <span>Massgeschneiderte Lösungen für Ihren Bedarf</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="buy-btn">Jetzt Kaufen</a>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+
+            </div>
+
+        </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Erfahrungsberichte</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="swiper">
+                <script type="application/json" class="swiper-config">
+                    {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": {
+                            "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        }
+                    }
+                </script>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                            <h3>Tom Meili</h3>
+                            <h4>Ceo &amp; Founder</h4>
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>Eifach di beschte!.</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                            <h3>Tom Meili</h3>
+                            <h4>Designer</h4>
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>Eifach di beschte!</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                            <h3>Tom Meili</h3>
+                            <h4>Store Owner</h4>
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>Eifach di beschte!</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                            <h3>Tom Meili</h3>
+                            <h4>Freelancer</h4>
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>Eifach di beschte!</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                            <h3>Tom Meili</h3>
+                            <h4>Entrepreneur</h4>
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                    class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>Eifach di beschte!</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Faq 2 Section -->
+    <section id="faq-2" class="faq-2 section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Frequently Asked Questions</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+                sit in iste officiis commodi quidem hic quas.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+
+                    <div class="faq-container">
+
+                        <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                            <div class="faq-content">
+                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
+                                    non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
+                                    purus non.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                            <div class="faq-content">
+                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
+                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                    cursus turpis massa tincidunt dui.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                            <div class="faq-content">
+                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
+                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
+                                    Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
+                                    tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                            <div class="faq-content">
+                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
+                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                    cursus turpis massa tincidunt dui.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                            <i class="faq-icon bi bi-question-circle"></i>
+                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                            <div class="faq-content">
+                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
+                                    est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
+                                    suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Faq 2 Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Kontakt</h2>
+            <p>Kontaktieren Sie uns noch heute!</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-5">
+
+                    <div class="info-wrap">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Addresse</h3>
+                                <p>ZHAW School of Engineering, Technikumstrasse 9, 8401 Winterthur</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Rufen Sie uns an</h3>
+                                <p>044 123 456 789</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>compass-admin@proton.</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.6223098497844!2d8.726792476386786!3d47.497270671179905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a999dc78caddf%3A0xfdf5b752f62c026e!2sZHAW%20School%20of%20Engineering!5e0!3m2!1sde!2sch!4v1716295547843!5m2!1sde!2sch"
+                                width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                          data-aos-delay="200">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <label for="name-field" class="pb-2">Dein Name</label>
+                                <input type="text" name="name" id="name-field" class="form-control" required="">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email-field" class="pb-2">Deine Email</label>
+                                <input type="email" class="form-control" name="email" id="email-field" required="">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="subject-field" class="pb-2">Betreff</label>
+                                <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="message-field" class="pb-2">Nachricht</label>
+                                <textarea class="form-control" name="message" rows="10" id="message-field"
+                                          required=""></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <div class="loading">Laden</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Deine Nachricht wurde gesendet! Vielen Dank.</div>
+
+                                <button type="submit">Nachricht verschicken</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div><!-- End Contact Form -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Contact Section -->
+
+</main>
+
+<footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6">
+                    <h4>Abonnieren Sie uns</h4>
+                    <p>Abonnieren Sie unseren Newsletter und erhalten Sie die neuesten Informationen über unsere
+                        Produkte und Dienstleistungen!</p>
+                    <form action="forms/newsletter.php" method="post" class="php-email-form">
+                        <div class="newsletter-form"><input type="email" name="email"><input type="submit"
+                                                                                             value="Subscribe"></div>
+                        <div class="loading">Laden</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Erfolgreich abonniert. Vielen Dank!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="d-flex align-items-center">
+                    <span class="sitename">Compass</span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p>Technikumstrasse 9</p>
+                    <p>Winterthur, 8401</p>
+                    <p class="mt-3"><strong>Tel:</strong> <span>044 123 456 789</span></p>
+                    <p><strong>Email:</strong> <span>compass-admin@proton.me</span></p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <h4>Follow Us</h4>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                <div class="social-links d-flex">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Compass</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

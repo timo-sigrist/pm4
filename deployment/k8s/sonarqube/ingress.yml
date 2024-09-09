@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sonarqube-ingress
+  namespace: compass-stage
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: sonarqube-compass.pm4.init-lab.ch
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sonarqube-service
+                port:
+                  number: 9000

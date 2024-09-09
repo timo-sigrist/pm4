@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net" modified="2024-06-08T14:52:27.189Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="HTJQjhlt3s84l7GHqMvW" version="24.5.2" type="device">
+  <diagram name="Seite-1" id="2l0bHzbHAe2lSTQdAnFo">
+    <mxGraphModel dx="782" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-1" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-2" value="Frontend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-3" value="Auth0" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="390" y="120" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-4" value="Backend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="550" y="120" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-5" value="Log in attempt" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="yVzZtUtBgAXeRgT0bMXJ-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="190" as="sourcePoint" />
+            <mxPoint x="210" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-6" value="Redirect for authentication" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="yVzZtUtBgAXeRgT0bMXJ-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="270" y="210" as="sourcePoint" />
+            <mxPoint x="420" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-7" value="Authentication form" style="html=1;verticalAlign=bottom;endArrow=none;curved=0;rounded=0;startArrow=block;startFill=1;endFill=0;" edge="1" parent="1" source="yVzZtUtBgAXeRgT0bMXJ-1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="270" y="250" as="sourcePoint" />
+            <mxPoint x="440" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-10" value="Enter credentials" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="yVzZtUtBgAXeRgT0bMXJ-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="280" as="sourcePoint" />
+            <mxPoint x="300" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-13" value="Verify credentials" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0.5;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="yVzZtUtBgAXeRgT0bMXJ-3" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="300" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="470" y="300" />
+              <mxPoint x="470" y="330" />
+            </Array>
+            <mxPoint x="445" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-15" value="Return authentication token" style="html=1;verticalAlign=bottom;endArrow=none;curved=0;rounded=0;startArrow=block;startFill=1;endFill=0;" edge="1" parent="1" source="yVzZtUtBgAXeRgT0bMXJ-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="350" as="sourcePoint" />
+            <mxPoint x="440" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yVzZtUtBgAXeRgT0bMXJ-16" value="Use token for API requests" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="270" y="390" as="sourcePoint" />
+            <mxPoint x="599.5" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

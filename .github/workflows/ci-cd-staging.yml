@@ -1,0 +1,76 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # enables manual trigger
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Push Backend Docker Image
+        uses: ./.github/actions/build-push-docker-backend
+        with:
+          docker_username: ${{ secrets.DOCKER_USERNAME }}
+          docker_password: ${{ secrets.DOCKER_PASSWORD }}
+          image_tag: pm4compass/compass-backend:${{ github.sha }}
+
+  build-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Push Frontend Docker Image
+        uses: ./.github/actions/build-push-docker-frontend
+        with:
+          docker_username: ${{ secrets.DOCKER_USERNAME }}
+          docker_password: ${{ secrets.DOCKER_PASSWORD }}
+          image_tag: pm4compass/compass-frontend:${{ github.sha }}
+  build-landing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Push Frontend Docker Image
+        uses: ./.github/actions/build-push-docker-landing
+        with:
+          docker_username: ${{ secrets.DOCKER_USERNAME }}
+          docker_password: ${{ secrets.DOCKER_PASSWORD }}
+          image_tag: pm4compass/compass-landing:${{ github.sha }}
+
+  deploy-backend:
+    needs: [build-backend, build-frontend, build-landing]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Up K8s and Redeploy Backend
+        uses: ./.github/actions/redeploy-k8s-backend
+        with:
+          kubeconfig_data: ${{ secrets.KUBE_CONFIG_DATA }}
+          backend_image_tag: pm4compass/compass-backend:${{ github.sha }}
+          namespace: compass-stage
+
+  deploy-frontend:
+    needs: [build-backend, build-frontend, build-landing]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Up K8s and Redeploy Frontend
+        uses: ./.github/actions/redeploy-k8s-frontend
+        with:
+          kubeconfig_data: ${{ secrets.KUBE_CONFIG_DATA }}
+          frontend_image_tag: pm4compass/compass-frontend:${{ github.sha }}
+          namespace: compass-stage
+
+  deploy-landing:
+    needs: [build-backend, build-frontend, build-landing]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Up K8s and Redeploy Landing
+        uses: ./.github/actions/redeploy-k8s-landing
+        with:
+          kubeconfig_data: ${{ secrets.KUBE_CONFIG_DATA }}
+          landing_image_tag: pm4compass/compass-landing:${{ github.sha }}
+          namespace: compass-stage

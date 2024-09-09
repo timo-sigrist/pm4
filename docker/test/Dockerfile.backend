@@ -1,0 +1,8 @@
+# Backend Build Stage
+FROM gradle:8.6.0-jdk21 AS builder
+WORKDIR /app
+COPY ./backend/build.gradle .
+COPY ./backend/settings.gradle .
+COPY ./backend/src src
+RUN gradle assemble --no-daemon
+CMD ["gradle", "test -info"]                   

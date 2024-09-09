@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarqube
+  namespace: compass-stage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarqube
+  template:
+    metadata:
+      labels:
+        app: sonarqube
+    spec:
+      containers:
+        - name: sonarqube
+          image: sonarqube:lts-community
+          env:
+            - name: SONAR_JDBC_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: sonarqube-configmap
+                  key: DB_HOST
+            - name: SONAR_JDBC_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_USERNAME
+            - name: SONAR_JDBC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: DB_PASSWORD
+          ports:
+            - containerPort: 9000
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+          volumeMounts:
+            - mountPath: /opt/sonarqube/data
+              name: sonar-data
+      volumes:
+        - name: sonar-data
+          persistentVolumeClaim:
+            claimName: sonar-pvc

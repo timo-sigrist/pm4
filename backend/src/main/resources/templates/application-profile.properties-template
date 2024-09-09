@@ -1,0 +1,16 @@
+APP_URL=localhost:8080
+AUTH0_AUDIENCE=backend-api
+AUTH0_ISSUER_BASE_URL=https://stadtmuur-compass-dev.eu.auth0.com/
+
+AUTH0_MGMT_AUDIENCE=https://stadtmuur-compass-dev.eu.auth0.com/api/v2/;
+AUTH0_MGMT_BASE_URL=https://stadtmuur-compass-dev.eu.auth0.com;
+AUTH0_MGMT_CLIENT_SECRET=''
+AUTH0_MGMT_CLIENT_ID=''
+
+DB_HOST=//localhost:5432/compass_db
+DB_PASSWORD=direction
+DB_USERNAME=compass_admin
+
+DDL_AUTO=update
+DOCKER_ON=true or false
+SWAGGER_UI_ON=true or false

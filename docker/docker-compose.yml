@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: postgres_compass
+    environment:
+      POSTGRES_DB: compass
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: dbadmin
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    image: compass_backend
+    container_name: compass_backend
+    depends_on:
+      - postgres
+    environment:
+      SPRING_CONFIG_IMPORT: optional:git.properties
+      SPRING_DOCKER_COMPOSE_ENABLED: ${DOCKER_ON}
+      SPRINGDOC_API_DOCS_ENABLED: ${SWAGGER_UI_ON}
+      SERVER_PORT: ${PORT:8080}
+      SERVER_SERVLET_CONTEXT_PATH: /api
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${DB_HOST:localhost}:5432/compass_db
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: ${DDL_AUTO}
+      OKTA_OAUTH2_ISSUER: ${AUTH0_ISSUER_BASE_URL}/
+      OKTA_OAUTH2_AUDIENCE: ${AUTH0_AUDIENCE}
+      AUTH0_MGMT_BASEURL: ${AUTH0_ISSUER_BASE_URL}
+      AUTH0_MGMT_CLIENTID: ${AUTH0_CLIENT_ID}
+      AUTH0_MGMT_CLIENTSECRET: ${AUTH0_CLIENT_SECRET}
+      AUTH0_MGMT_AUDIENCE: ${AUTH0_MGMT_AUDIENCE}
+      CORS_ALLOWEDORIGINS: http://localhost:3000,https://${APP_URL}
+      CORS_ALLOWEDMETHODS: GET,POST,PUT,DELETE
+      CORS_ALLOWEDHEADERS: Authorization,Content-Type
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: ${SECURITY_LOG_LEVEL}
+    ports:
+      - '8080:8080'
+
+  frontend:
+    image: compass_frontend
+    container_name: compass_frontend
+    depends_on:
+      - backend
+    environment:
+      AUTH0_SECRET: ${AUTH0_SECRET}
+      AUTH0_BASE_URL: ${AUTH0_BASE_URL}
+      AUTH0_ISSUER_BASE_URL: ${AUTH0_ISSUER_BASE_URL}
+      AUTH0_CLIENT_ID: ${AUTH0_CLIENT_ID}
+      AUTH0_CLIENT_SECRET: ${AUTH0_CLIENT_SECRET}
+      AUTH0_AUDIENCE: ${AUTH0_AUDIENCE}
+    ports:
+      - '3000:3000'
+
+  landing:
+    image: compass_landing
+    container_name: landing_page
+    ports:
+      - '80:80'
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

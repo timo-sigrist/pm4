@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "auth0.mgmt.audience",
+    "type": "java.lang.String",
+    "description": "A description for 'auth0.mgmt.audience'"
+  },
+  {
+    "name": "auth0.mgmt.baseurl",
+    "type": "java.lang.String",
+    "description": "A description for 'auth0.mgmt.baseurl'"
+  },
+  {
+    "name": "auth0.mgmt.clientId",
+    "type": "java.lang.String",
+    "description": "A description for 'auth0.mgmt.clientId'"
+  },
+  {
+    "name": "cors.allowedHeaders",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedHeaders'"
+  },
+  {
+    "name": "cors.allowedOrigins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedOrigins'"
+  }
+]}

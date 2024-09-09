@@ -1,0 +1,98 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-prod:compass-frontend-service","ingressName":"compass-prod:compass-ingress","hostname":"compass.pm4.init-lab.ch","path":"/api/auth/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-prod:compass-frontend-service","ingressName":"compass-prod:compass-ingress","hostname":"compass.pm4.init-lab.ch","path":"/api/proxy/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-prod:compass-frontend-service","ingressName":"compass-prod:compass-ingress","hostname":"compass.pm4.init-lab.ch","path":"/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-prod:compass-backend-service","ingressName":"compass-prod:compass-ingress","hostname":"compass.pm4.init-lab.ch","path":"/api","allNodes":false}]
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"compass-ingress","namespace":"compass-prod"},"spec":{"ingressClassName":"traefik","rules":[{"host":"compass.pm4.init-lab.ch","http":{"paths":[{"backend":{"service":{"name":"compass-frontend-service","port":{"number":3000}}},"path":"/api/auth/","pathType":"Prefix"},{"backend":{"service":{"name":"compass-frontend-service","port":{"number":3000}}},"path":"/api/proxy/","pathType":"Prefix"},{"backend":{"service":{"name":"compass-backend-service","port":{"number":8080}}},"path":"/api","pathType":"Prefix"},{"backend":{"service":{"name":"compass-frontend-service","port":{"number":3000}}},"path":"/","pathType":"Prefix"}]}}]},"status":{"loadBalancer":{"ingress":[{"ip":"192.168.0.131"},{"ip":"192.168.0.132"},{"ip":"192.168.0.133"}]}}}
+  creationTimestamp: "2024-05-10T16:03:44Z"
+  generation: 3
+  managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: traefik
+      operation: Update
+      subresource: status
+      time: "2024-05-10T16:03:44Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:rules: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-05-10T16:37:44Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/publicEndpoints: {}
+        f:spec:
+          f:ingressClassName: {}
+      manager: rancher
+      operation: Update
+      time: "2024-05-10T16:37:44Z"
+  name: compass-ingress
+  namespace: compass-prod
+  resourceVersion: "96923219"
+  uid: 57debc42-4a97-44f8-9007-0ec1e4cad7e1
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: compass.pm4.init-lab.ch
+      http:
+        paths:
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /api/auth/
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /api/proxy/
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-backend-service
+                port:
+                  number: 8080
+            path: /api
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /
+            pathType: Prefix
+    - host: compass-landing.pm4.init-lab.ch
+      http:
+        paths:
+          - backend:
+              service:
+                name: compass-landing-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+      - ip: 192.168.0.131
+      - ip: 192.168.0.132
+      - ip: 192.168.0.133

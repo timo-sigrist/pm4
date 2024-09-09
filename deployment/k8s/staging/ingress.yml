@@ -1,0 +1,86 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-stage:compass-frontend-service","ingressName":"compass-stage:compass-ingress","hostname":"compass-staging.pm4.init-lab.ch","path":"/api/proxy/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-stage:compass-frontend-service","ingressName":"compass-stage:compass-ingress","hostname":"compass-staging.pm4.init-lab.ch","path":"/api/auth/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-stage:compass-frontend-service","ingressName":"compass-stage:compass-ingress","hostname":"compass-staging.pm4.init-lab.ch","path":"/","allNodes":false},{"addresses":["192.168.0.131","192.168.0.132","192.168.0.133"],"port":80,"protocol":"HTTP","serviceName":"compass-stage:compass-backend-service","ingressName":"compass-stage:compass-ingress","hostname":"compass-staging.pm4.init-lab.ch","path":"/api/","allNodes":false}]
+  creationTimestamp: "2024-04-13T09:38:23Z"
+  generation: 5
+  managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: traefik
+      operation: Update
+      subresource: status
+      time: "2024-04-13T09:38:23Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/publicEndpoints: {}
+        f:spec:
+          f:ingressClassName: {}
+          f:rules: {}
+      manager: rancher
+      operation: Update
+      time: "2024-05-03T18:29:58Z"
+  name: compass-ingress
+  namespace: compass-stage
+  resourceVersion: "91091365"
+  uid: 7938e7b2-b849-4fb4-a7d5-154b39d4b2bc
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: compass-staging.pm4.init-lab.ch
+      http:
+        paths:
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /api/proxy/
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /api/auth/
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-backend-service
+                port:
+                  number: 8080
+            path: /api/
+            pathType: Prefix
+          - backend:
+              service:
+                name: compass-frontend-service
+                port:
+                  number: 3000
+            path: /
+            pathType: Prefix
+    - host: compass-landing-staging.pm4.init-lab.ch
+      http:
+        paths:
+          - backend:
+              service:
+                name: compass-landing-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+      - ip: 192.168.0.131
+      - ip: 192.168.0.132
+      - ip: 192.168.0.133

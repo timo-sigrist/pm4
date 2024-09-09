@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: compass-configmap
+  namespace: compass-prod
+  labels:
+    app: compass-app
+data:
+  APP_URL: compass.pm4.init-lab.ch
+  DDL_AUTO: update
+  NEXT_PUBLIC_API_BASE_PATH: https://compass-staging.pm4.init-lab.ch
+  DOCKER_ON: "false"
+  SWAGGER_UI_ON: "false"
+  SECURITY_LOG_LEVEL: ERROR

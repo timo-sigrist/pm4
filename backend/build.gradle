@@ -1,0 +1,109 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'
+}
+
+group = 'ch.zhaw.pm4.compass'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'com.okta.spring:okta-spring-boot-starter:3.0.5'
+    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+    
+	// lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+	
+    // PostgreSQL
+    runtimeOnly 'org.postgresql:postgresql'
+
+    //OkHttpClient
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+	
+    //swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.8'
+    implementation 'io.swagger:swagger-annotations:1.6.14'
+	
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'junit:junit:4.12'
+}
+
+tasks.register("local") {
+    group = "application"
+    description = "Runs the Spring Boot application with the local profile"
+
+    doFirst {
+        tasks.bootRun.systemProperties['spring.profiles.active'] = 'local'
+    }
+    finalizedBy "bootRun"
+}
+
+tasks.register("localTest") {
+	group = "verification"
+	description = "Runs tests with the local profile"
+	
+    doFirst {
+        tasks.test.systemProperties['spring.profiles.active'] = 'local'
+    }
+    finalizedBy "test"
+}
+
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    // Configure report outputs and requirements
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
+        
+        xml.outputLocation = file("${buildDir}/reports/jacoco/xml/jacocoTestReport.xml")
+        html.outputLocation = file("${buildDir}/reports/jacoco/html")
+    }
+}
+
+test {
+    useJUnitPlatform()
+    // Use finalizedBy to ensure jacocoTestReport runs after tests
+    finalizedBy 'jacocoTestReport'
+}
+
+
+task printEnv {
+    doLast {
+        println 'Environment variables:'
+        System.env.each { envVar ->
+            println "${envVar.key}: ${envVar.value}"
+        }
+    }
+}

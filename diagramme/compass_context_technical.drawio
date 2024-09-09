@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" modified="2024-06-08T14:21:20.455Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" version="24.5.2" etag="4pLxgBK3LFR2msjnrDGk" type="device">
+  <diagram id="RdQmSKihHN9XMODijrFX" name="Seite-1">
+    <mxGraphModel dx="982" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-1" value="compass development" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="195" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-2" value="Auth0 Service" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="324" y="10" width="236" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-3" value="«source»&lt;br&gt;compass backeend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="240" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-4" value="«source»&lt;br&gt;compass frontend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="70" y="240" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-5" value="compass staging" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="445" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-6" value="«source»&lt;br&gt;compass backeend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="510" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-7" value="«source»&lt;br&gt;compass frontend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="70" y="510" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-8" value="compass production" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-9" value="«source»&lt;br&gt;compass backeend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="590" y="325" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-10" value="«source»&lt;br&gt;compass frontend" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="450" y="325" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-11" value="compass user devices" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="560" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.021;entryY=0.517;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0;exitDx=130;exitDy=155;exitPerimeter=0;" edge="1" parent="1" target="6x-iVQ96O4isxfEUyt0y-5" source="6x-iVQ96O4isxfEUyt0y-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="355" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-13" value="deployment/ ssh" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-12">
+          <mxGeometry x="-0.0972" y="4" relative="1" as="geometry">
+            <mxPoint x="41" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=65;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=75;entryDy=300;entryPerimeter=0;" edge="1" parent="1" target="6x-iVQ96O4isxfEUyt0y-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="325" as="sourcePoint" />
+            <mxPoint x="370" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-15" value="depoyment / ssh" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-14">
+          <mxGeometry x="-0.0492" y="-3" relative="1" as="geometry">
+            <mxPoint x="-37" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-16" value="«browser»&lt;br&gt;compass frontend content" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="450" y="630" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=145;exitPerimeter=0;entryX=0;entryY=0;entryDx=140;entryDy=155;entryPerimeter=0;" edge="1" parent="1" source="6x-iVQ96O4isxfEUyt0y-11" target="6x-iVQ96O4isxfEUyt0y-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-18" value="Internet / Https" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-17">
+          <mxGeometry x="0.1625" y="1" relative="1" as="geometry">
+            <mxPoint x="46" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-19" value="«source»&lt;br&gt;authentication service" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="370" y="50" width="137" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=145;entryPerimeter=0;exitX=0;exitY=0;exitDx=90;exitDy=123;exitPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="6x-iVQ96O4isxfEUyt0y-2" target="6x-iVQ96O4isxfEUyt0y-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-21" value="internet / https" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-20">
+          <mxGeometry x="-0.0915" y="-3" relative="1" as="geometry">
+            <mxPoint x="-34" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=90;exitDy=123;exitPerimeter=0;startArrow=classic;startFill=1;entryX=0;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6x-iVQ96O4isxfEUyt0y-2" target="6x-iVQ96O4isxfEUyt0y-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="447" y="110" as="sourcePoint" />
+            <mxPoint x="225" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-23" value="internet / https" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-22">
+          <mxGeometry x="-0.0915" y="-3" relative="1" as="geometry">
+            <mxPoint x="11" y="-41" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-24" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=90;exitDy=123;exitPerimeter=0;startArrow=classic;startFill=1;entryX=0;entryY=0;entryDx=0;entryDy=145;entryPerimeter=0;" edge="1" parent="1" source="6x-iVQ96O4isxfEUyt0y-2" target="6x-iVQ96O4isxfEUyt0y-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="447" y="110" as="sourcePoint" />
+            <mxPoint x="370" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6x-iVQ96O4isxfEUyt0y-25" value="internet / https" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="6x-iVQ96O4isxfEUyt0y-24">
+          <mxGeometry x="-0.0915" y="-3" relative="1" as="geometry">
+            <mxPoint x="54" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

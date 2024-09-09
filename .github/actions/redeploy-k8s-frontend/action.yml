@@ -1,0 +1,26 @@
+name: "Redeploy Frontend"
+description: "Sets up Kubernetes context and triggers frontend redeployment with dynamic image tags and namespaces"
+inputs:
+  kubeconfig_data:
+    description: "Kubeconfig Data"
+    required: true
+  frontend_image_tag:
+    description: "Docker image tag to use for frontend redeployment"
+    required: true
+  namespace:
+    description: "Kubernetes namespace for frontend deployment"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up K8s context
+      uses: azure/k8s-set-context@v1
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ inputs.kubeconfig_data }}
+
+    - run: |
+        kubectl set image deployment/compass-frontend-deployment compass-frontend-container=${{ inputs.frontend_image_tag }} -n ${{ inputs.namespace }}
+        kubectl patch deployment compass-frontend-deployment -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"forceReDeploy\":\"$(date +%s)\"}}}}}" -n ${{ inputs.namespace }}
+      shell: bash

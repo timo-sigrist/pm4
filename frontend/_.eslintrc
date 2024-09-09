@@ -1,0 +1,84 @@
+{
+  "extends": ["airbnb-base", "next/core-web-vitals"],
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort",
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json",
+      },
+      "rules": {
+        "import/extensions": "off",
+        "react/function-component-definition": "off",
+        "react/destructuring-assignment": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement",
+        ],
+        "import/prefer-default-export": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/order": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_" },
+        ],
+      },
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "plugins": ["jest", "jest-formatting", "testing-library", "jest-dom"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-formatting/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended",
+      ],
+    },
+    {
+      "files": ["**/*.spec.ts"],
+      "extends": ["plugin:playwright/recommended"],
+    },
+    {
+      "files": ["*.stories.*"],
+      "extends": ["plugin:storybook/recommended"],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    {
+      "files": ["compassClient/apis/*.ts"], // Adjust the pattern to match your generated files
+      "rules": {
+        // Disable specific rules or all rules
+        "@typescript-eslint/no-unused-vars": "off",
+        // or disable all rules for these files
+        "no-unused-vars": "off",
+      },
+    },
+  ],
+}

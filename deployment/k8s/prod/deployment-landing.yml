@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compass-landing-deployment
+  namespace: compass-prod
+  labels:
+    app: compass-landing
+  annotations:
+    forceReDeploy: "INITIAL_VALUE"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compass-landing
+  template:
+    metadata:
+      labels:
+        app: compass-landing
+    spec:
+      containers:
+        - name: compass-landing-container
+          image: pm4compass/compass-landing:latest # Update this with your landing image tag dynamically
+          ports:
+            - containerPort: 3000
+          env:
+      imagePullSecrets:
+        - name: docker-credentials
